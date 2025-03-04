@@ -5,7 +5,7 @@ print("Welcome to the student management tool.")
 def menu_options():
     option=int(input("""
     1- Add student information
-    2- Review current student information
+    2- Review current student information1
     3- Review top 3 students
     4- Review average grades of each student
     5- Export data into a CSV
@@ -28,5 +28,10 @@ def option_selected():
         print("\n************************************************\n")
         menu_options()
 
+    if option == int(3):
+        print("\n************* Top 3 Students *************\n")
+        actions.top_3()
+        print("\n************************************************\n")
+        menu_options()
 
 print(option_selected())
