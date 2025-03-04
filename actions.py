@@ -1,6 +1,8 @@
 import random
+import json
 
 def student_data():
+    file_path='/Users/aaronlopez/Documents/PRACTICAS_PYTHON/students.txt'
     condition="yes"
     all_students_data=[]
     while condition == "yes":
@@ -22,6 +24,19 @@ def student_data():
             counter=counter+1
         all_students_data.append(student)
         condition=input("Do you want to add another student?(yes/no): ")
-    
+        with open(file_path,'a') as file:
+            data=json.dumps(student)
+            file.write(str(data)+'\n')
+#right now we are not using the list of dictionaries all_students data
 
     return all_students_data
+
+#student_data()
+
+def view_all_students():
+    file_path='/Users/aaronlopez/Documents/PRACTICAS_PYTHON/students.txt'
+    with open(file_path) as file:
+        for line in file.readlines():
+            data= json.loads(line)
+            print(data)
+        
