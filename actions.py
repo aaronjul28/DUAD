@@ -41,13 +41,32 @@ def view_all_students():
 def top_3():
     file_path='/Users/aaronlopez/Documents/PRACTICAS_PYTHON/students.txt'
     all_students_average={}
+    count=0
     with open(file_path) as file:
         for line in file.readlines():
             data=json.loads(line)
             name=data["name"]
             average=int(data["science"]+data["english"]+data["spanish"]+data["history"])/4
             all_students_average[name]=average
+            count=count+1
     sorted_average=sorted(all_students_average.items(), key=lambda x:x[1], reverse=True)   
-    for i in range(3):
-        print(sorted_average[i])
-top_3()
+    if count < 3:
+        for i in sorted_average:
+            print(i)
+    else:    
+        for i in range(3):
+            print(sorted_average[i])
+
+
+def average():
+    file_path='/Users/aaronlopez/Documents/PRACTICAS_PYTHON/students.txt'
+    all_students_average={}
+    with open(file_path) as file:
+        for line in file.readlines():
+            data=json.loads(line)
+            name=data["name"]
+            average=int(data["science"]+data["english"]+data["spanish"]+data["history"])/4
+            all_students_average[name]=average
+    for i in all_students_average:
+        print(f"{i}:{all_students_average[i]}")
+
