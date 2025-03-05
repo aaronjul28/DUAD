@@ -24,3 +24,17 @@ def export_to_csv():
                 print(f'Exporting data from student {row["name"]}')
                 writer.writerow(row)
 
+def import_from_csv():
+    file_path=input('Enter the path of the file you want to import the data from:')
+    data='/Users/aaronlopez/Documents/PRACTICAS_PYTHON/students.txt'
+
+    with open(file_path,'r') as file:
+            dict_reader= csv.DictReader(file,quoting=csv.QUOTE_ALL,quotechar='"')
+            for row in dict_reader:
+                with open(data,'a') as file_to_write:
+                    row=str(row).replace("'",'"')
+                    file_to_write.write('\n'+row)
+
+
+#/Users/aaronlopez/Documents/PRACTICAS_PYTHON/students2.csv
+#/Users/aaronlopez/Documents/PRACTICAS_PYTHON/students.csv
