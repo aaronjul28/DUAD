@@ -48,4 +48,9 @@ def option_selected():
             print("\n************************************************\n")
             option=menu_options()
 
+        if option == int(6):
+            print("\n************* Importing data to a csv file *************\n")
+            data.import_from_csv()
+            print("\n************************************************\n")
+            option=menu_options()
 option_selected()
