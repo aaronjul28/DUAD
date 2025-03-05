@@ -46,7 +46,7 @@ def top_3():
         for line in file.readlines():
             data=json.loads(line)
             name=data["name"]
-            average=int(data["science"]+data["english"]+data["spanish"]+data["history"])/4
+            average=int(data["science"])+int(data["english"])+int(data["spanish"])+int(data["history"])/4
             all_students_average[name]=average
             count=count+1
     sorted_average=sorted(all_students_average.items(), key=lambda x:x[1], reverse=True)   
@@ -65,7 +65,7 @@ def average():
         for line in file.readlines():
             data=json.loads(line)
             name=data["name"]
-            average=int(data["science"]+data["english"]+data["spanish"]+data["history"])/4
+            average=int(data["science"])+int(data["english"])+int(data["spanish"])+int(data["history"])/4
             all_students_average[name]=average
     for i in all_students_average:
         print(f"{i}:{all_students_average[i]}")
