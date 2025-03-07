@@ -19,36 +19,36 @@ Please select one of the following options: """
 
 def option_selected():
     option=menu_options()
-    while option != int(7):
-        if option == int(1):
+    while option != 7:
+        if option == 1:
             actions.student_data()
             option=menu_options()    
 
-        if option == int(2):
+        if option == 2:
             print("\n************* Students Information *************\n")
             actions.view_all_students()
             print("\n************************************************\n")
             option=menu_options()
 
-        if option == int(3):
+        if option == 3:
             print("\n************* Top 3 Students *************\n")
             actions.top_3()
             print("\n************************************************\n")
             option=menu_options()
 
-        if option == int(4):
+        if option == 4:
             print("\n************* Average grades for all students *************\n")
             actions.average()
             print("\n************************************************\n")
             option=menu_options()
 
-        if option == int(5):
+        if option == 5:
             print("\n************* Exporting data to a csv file *************\n")
             data.export_to_csv()
             print("\n************************************************\n")
             option=menu_options()
 
-        if option == int(6):
+        if option == 6:
             print("\n************* Importing data to a csv file *************\n")
             data.import_from_csv()
             print("\n************************************************\n")
