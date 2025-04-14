@@ -9,10 +9,14 @@ def student_data():
         student=random.randint(0,1000)
         student={}
         full_name=input("Student's full name: ")
+        while full_name == '':
+            full_name=input("Please enter a valid name: ")
         student_class=input("Enter the student's class: ")
+        while student_class == '':
+            student_class=input("Please enter a valid Student Class: ")
         course_list=["science","english","spanish","history"]
         for i in course_list:
-            grade=int(input(f"Enter {i} grade for student {full_name}: "))     
+            grade=int(input(f"Enter {i} grade for student {full_name}: "))
             student['name']=full_name
             student['clase']=student_class       
             student[i]=grade
@@ -25,6 +29,8 @@ def student_data():
         with open(file_path,'a') as file:
             data=json.dumps(student)
             file.write(str(data))
+            file.write(str('\n'))
+            
 #right now we are not using the list of dictionaries all_students data
 
     return all_students_data

@@ -4,17 +4,34 @@ import data
 print("Welcome to the student management tool.")
 
 def menu_options():
-    option=int(input("""
-    1- Add student information
-    2- Review current student information1
-    3- Review top 3 students
-    4- Review average grades of each student
-    5- Export data into a CSV
-    6- Import data from a CSV
-    7- Exit
+    option=''
+    while option not in range(1,8):
+        try:
+            option=int(input("""
+            1- Add student information
+            2- Review current student information1
+            3- Review top 3 students
+            4- Review average grades of each student
+            5- Export data into a CSV
+            6- Import data from a CSV
+            7- Exit
+                            
+            Please select one of the options: """
+        ))      
+        except:
+            print("** Invalid option ** \n")
 
-Please select one of the following options: """
-))
+            option=int(input(""" 
+            1- Add student information
+            2- Review current student information1
+            3- Review top 3 students
+            4- Review average grades of each student
+            5- Export data into a CSV
+            6- Import data from a CSV
+            7- Exit
+                            
+            Please select one of the following options: """
+        ))  
     return option
 
 def option_selected():

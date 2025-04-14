@@ -1,5 +1,6 @@
 import csv
 import json
+import os
 
 
 def export_to_csv():
@@ -25,7 +26,23 @@ def export_to_csv():
                 writer.writerow(row)
 
 def import_from_csv():
-    file_path=input('Enter the path of the file you want to import the data from:')
+    file_path=input(
+'''
+Use this example for reference: /Users/aaronlopez/Documents/PRACTICAS_PYTHON/students2.csv
+Enter the path of the file you want to import the data from: ''')
+    if file_path =='':
+        file_path=input(
+'''
+You entered an invalid path.
+Use this example for reference: /Users/aaronlopez/Documents/PRACTICAS_PYTHON/students2.csv
+Enter the path of the file you want to import the data from: ''')
+    
+    try:
+        if os.path.getsize(file_path)==0:
+            print('\n!!!CSV file specified is empty!!!')
+    except OSError as exception:
+        print(f'Error checking file: {exception}')
+
     data='/Users/aaronlopez/Documents/PRACTICAS_PYTHON/students.txt'
 
     with open(file_path,'r') as file:
@@ -33,8 +50,9 @@ def import_from_csv():
             for row in dict_reader:
                 with open(data,'a') as file_to_write:
                     row=str(row).replace("'",'"')
-                    file_to_write.write('\n'+row)
+                    file_to_write.write(row+'\n')
+
 
 
 #/Users/aaronlopez/Documents/PRACTICAS_PYTHON/students2.csv
-#/Users/aaronlopez/Documents/PRACTICAS_PYTHON/students.csv
+#/Users/aaronlopez/Documents/PRACTICAS_PYTHON/students.csv 
