@@ -1,5 +1,6 @@
 import random
 import json
+import random
 
 def student_data():
     file_path='/Users/aaronlopez/Documents/PRACTICAS_PYTHON/students.txt'
@@ -64,15 +65,60 @@ def top_3():
             print(sorted_average[i])
 
 
+# def average():
+#     file_path='/Users/aaronlopez/Documents/PRACTICAS_PYTHON/students.txt'
+#     all_students_average={}
+#     with open(file_path) as file:
+#         for line in file.readlines():
+#             data=json.loads(line)
+#             name=data["name"]
+#             average=int(int(data["science"])+int(data["english"])+int(data["spanish"])+int(data["history"]))/4
+#             all_students_average[name]=average
+#     for i in all_students_average:
+#         print(f"{i}:{all_students_average[i]}")
+
 def average():
     file_path='/Users/aaronlopez/Documents/PRACTICAS_PYTHON/students.txt'
-    all_students_average={}
     with open(file_path) as file:
+        
+#SCIENCE
+        science_grades=[]
+        english_grades=[]
+        spanish_grades=[]
+        history_grades=[]
+        
         for line in file.readlines():
             data=json.loads(line)
-            name=data["name"]
-            average=int(int(data["science"])+int(data["english"])+int(data["spanish"])+int(data["history"]))/4
-            all_students_average[name]=average
-    for i in all_students_average:
-        print(f"{i}:{all_students_average[i]}")
+            science_grades.append(int(data['science']))
+            english_grades.append(int(data['english']))
+            spanish_grades.append(int(data['spanish']))
+            history_grades.append(int(data['english']))
+
+        science_average=0
+        english_average=0
+        spanish_average=0
+        history_average=0
+
+        for i in science_grades:
+            science_average=science_average+i
+        science_average=science_average/len(science_grades)
+        print('Science: ',science_average)
+
+        for i in english_grades:
+            english_average=english_average+i
+        english_average=english_average/len(english_grades)
+        print('English: ',english_average)
+
+        for i in spanish_grades:
+            spanish_average=spanish_average+i
+        spanish_average=spanish_average/len(spanish_grades)
+        print('Spanish: ',spanish_average)
+
+        for i in history_grades:
+            history_average=history_average+i
+        history_average=history_average/len(history_grades)
+        print('history: ',history_average)       
+
+
+#ENGLISH
 
