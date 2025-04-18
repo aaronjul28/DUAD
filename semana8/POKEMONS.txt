@@ -1,0 +1,141 @@
+[
+  {
+    "name": {
+      "english": "Pikachu"
+    },
+    "type": [
+      "Electric"
+    ],
+    "base": {
+      "HP": 35,
+      "Attack": 55,
+      "Defense": 40,
+      "Sp. Attack": 50,
+      "Sp. Defense": 50,
+      "Speed": 90
+    }
+  },
+  {
+    "name": {
+      "english": "Charmander"
+    },
+    "type": [
+      "Fire"
+    ],
+    "base": {
+      "HP": 39,
+      "Attack": 52,
+      "Defense": 43,
+      "Sp. Attack": 60,
+      "Sp. Defense": 50,
+      "Speed": 65
+    }
+  },
+  {
+    "name": {
+      "english": "Squirtle"
+    },
+    "type": [
+      "Water"
+    ],
+    "base": {
+      "HP": 44,
+      "Attack": 48,
+      "Defense": 65,
+      "Sp. Attack": 50,
+      "Sp. Defense": 64,
+      "Speed": 43
+    }
+  }
+]{
+  "name": "a",
+  "type": [
+    "a"
+  ],
+  "Base": {
+    "HP": "1",
+    "Attack": "1",
+    "Defense": "1",
+    "Sp.Attack": "1",
+    "Sp.Deffense": "1",
+    "Speed": "1"
+  }
+}{
+  "name": "1",
+  "type": [
+    "1"
+  ],
+  "Base": {
+    "HP": "1",
+    "Attack": "1",
+    "Defense": "1",
+    "Sp.Attack": "1",
+    "Sp.Deffense": "1",
+    "Speed": "1"
+  }
+}{
+  "name": "pika",
+  "type": [
+    "1"
+  ],
+  "Base": {
+    "HP": "1",
+    "Attack": "1",
+    "Defense": "1",
+    "Sp.Attack": "1",
+    "Sp.Deffense": "1",
+    "Speed": "1"
+  }
+}{
+  "name": "2",
+  "type": [
+    "2"
+  ],
+  "Base": {
+    "HP": "2",
+    "Attack": "2",
+    "Defense": "2",
+    "Sp.Attack": "2",
+    "Sp.Deffense": "2",
+    "Speed": "2"
+  }
+}{
+  "name": "3",
+  "type": [
+    "3"
+  ],
+  "Base": {
+    "HP": "3",
+    "Attack": "3",
+    "Defense": "3",
+    "Sp.Attack": "3",
+    "Sp.Deffense": "3",
+    "Speed": "3"
+  }
+}{
+  "name": "",
+  "type": [
+    ""
+  ],
+  "Base": {
+    "HP": "",
+    "Attack": "",
+    "Defense": "",
+    "Sp.Attack": "",
+    "Sp.Deffense": "",
+    "Speed": ""
+  }
+}{
+  "name": "",
+  "type": [
+    ""
+  ],
+  "Base": {
+    "HP": "",
+    "Attack": "",
+    "Defense": "",
+    "Sp.Attack": "",
+    "Sp.Deffense": "",
+    "Speed": ""
+  }
+}

@@ -1,0 +1,6 @@
+print('La suma de 1+1 es igual a:')
+print(1+1)
+print('La suma de 90+430 es igual a:')
+print(90+430)
+print('El resultado de la multiplicacion 4*5 es igual a:')
+print(4*5)
