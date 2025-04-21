@@ -7,9 +7,9 @@ class Bus():
         return passenger_list
         
 class Person():
-    def __init__(name):
-        passenger_onboarding=''
-        return passenger_onboarding
+    def __init__(self,name):
+        self.name=name
+        return name
 
 max_passengers=Bus.max_passengers
 passenger_onboarding=Person.__init__(input('Enter Passenger name: '))
