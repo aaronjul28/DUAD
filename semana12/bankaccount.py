@@ -14,8 +14,8 @@ class BankAccount:
     def __init__(self,balance):
         self.balance=balance
 
-    def balance(self):
-        return self.balance
+    # def balance(self):
+    #     return self.balance
 
     def invoice(self,invoice):
         invoice=invoice
@@ -29,20 +29,30 @@ class BankAccount:
 
 
 class SavingsAccounts(BankAccount):
-    def __init__(self, min_balance):
+    def __init__(self,balance,min_balance):
         self.min_balance=min_balance
+        super().__init__(balance)
 
-    def saving_withdraw(self,amount):
-        BankAccount.withdraw(amount)
-            
+    def savings_withdraw(self,amount):
+        #CHECK ALL ATRIBUTES ARE POPULATING PROPERLY
+        #print(self.balance, amount, self.min_balance)
+        if self.withdraw(amount) < self.min_balance:
+            print('The remaining would be lower than the minimum balance allowed')
+
+        else:
+            self.withdraw(amount)
+            print(f'New balance is {self.balance}')
 
 #CLASS BANK ACCOUNT TESTING
-operation=BankAccount(balance=50000)
-invoice=operation.invoice(50000)
-withdraw=operation.withdraw(80000)
-print(operation.balance)
+# operation=BankAccount(balance=50000)
+# invoice=operation.invoice(50000)
+# withdraw=operation.withdraw(80000)
+# print(operation.balance)
 
-# CLASS SAVINGS
-withdraw=SavingsAccounts(60000)
+# CLASS SAVINGS lower than minimum
+withdraw=SavingsAccounts(balance=100000,min_balance=60000)
+withdraw.savings_withdraw(amount=50000)
 
-withdraw.saving_withdraw(50000)
+# CLASS SAVINGS higher than minimum
+withdraw=SavingsAccounts(balance=100000,min_balance=60000)
+withdraw.savings_withdraw(amount=1000)
