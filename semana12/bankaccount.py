@@ -18,17 +18,15 @@ class BankAccount:
     #     return self.balance
 
     def invoice(self,invoice):
-        invoice=invoice
         self.balance=self.balance+invoice
         return self.balance
 
     def withdraw(self,withdraw):
-        withdraw=withdraw
         self.balance=self.balance-withdraw
         return self.balance
 
 
-class SavingsAccounts(BankAccount):
+class SavingsAccount(BankAccount):
     def __init__(self,balance,min_balance):
         self.min_balance=min_balance
         super().__init__(balance)
@@ -50,9 +48,9 @@ class SavingsAccounts(BankAccount):
 # print(operation.balance)
 
 # CLASS SAVINGS lower than minimum
-withdraw=SavingsAccounts(balance=100000,min_balance=60000)
+withdraw=SavingsAccount(balance=100000,min_balance=60000)
 withdraw.savings_withdraw(amount=50000)
 
 # CLASS SAVINGS higher than minimum
-withdraw=SavingsAccounts(balance=100000,min_balance=60000)
+withdraw=SavingsAccount(balance=100000,min_balance=60000)
 withdraw.savings_withdraw(amount=1000)
