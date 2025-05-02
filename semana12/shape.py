@@ -7,54 +7,68 @@ from abc import ABC, abstractmethod
 import math
 
 
-class Shape():
+class Shape(ABC):
     @abstractmethod
-    def calculate_perimeter():
+    def calculate_perimeter(self):
         pass
 
     @abstractmethod
-    def calculate_area():
+    def calculate_area(self):
         pass
 
 class Circle(Shape):
-    def calculate_perimeter(self,diameter):
-        perimeter=diameter*math.pi
+
+    def __init__(self,radius,diameter):
+        self.radius=radius
+        self.diameter=diameter
+
+    def calculate_perimeter(self):
+        perimeter=self.diameter*math.pi
         return f'The perimeter of the circle is {perimeter}'
 
-    def calculate_area(self,radius):
-        area=(radius*radius)*math.pi
+    def calculate_area(self):
+        area=(self.radius*self.radius)*math.pi
         return f'The area of the circle is {area}'
 
 class Square(Shape):
-    def calculate_perimeter(self,side):
-        perimeter=side*4
+
+    def __init__(self,side):
+        self.side=side
+
+    def calculate_perimeter(self):
+        perimeter=self.side*4
         return f'The perimeter of the square is {perimeter}'
 
-    def calculate_area(self,lenght,width):
-        area=lenght*width
+    def calculate_area(self):
+        area=self.side*self.side
         return f'The area of the square is {area}'
 
 class Rectangle(Shape):
-    def calculate_perimeter(self,lenght,width):
-        perimeter=(lenght*2)+(width*2)
+
+    def __init__(self,lenght,width):
+        self.lenght=lenght
+        self.width=width
+
+    def calculate_perimeter(self):
+        perimeter=(self.lenght*2)+(self.width*2)
         return f'The perimeter of the rectangle is {perimeter}'
 
-    def calculate_area(self,lenght,width):
-        area=lenght*width
+    def calculate_area(self):
+        area=self.lenght*self.width
         return f'The area of the rectangle is {area}'
 
 
-circle_perimeter=Circle()
-print(circle_perimeter.calculate_perimeter(5))
-print(circle_perimeter.calculate_area(5))
+circle_perimeter=Circle(5,5)
+print(circle_perimeter.calculate_perimeter())
+print(circle_perimeter.calculate_area())
 
-square_perimeter=Square()
-print(square_perimeter.calculate_perimeter(5))
-print(square_perimeter.calculate_area(5,5))
+square_perimeter=Square(5)
+print(square_perimeter.calculate_perimeter())
+print(square_perimeter.calculate_area())
 
 
-square_perimeter=Rectangle()
-print(square_perimeter.calculate_perimeter(5,5))
-print(square_perimeter.calculate_area(5,5))
+square_perimeter=Rectangle(5,5)
+print(square_perimeter.calculate_perimeter())
+print(square_perimeter.calculate_area())
 
 
