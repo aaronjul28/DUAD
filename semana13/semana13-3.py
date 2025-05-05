@@ -7,12 +7,12 @@
 import datetime
 
 def adult_check(func):
-    def wrapper(user, *args):
+    def wrapper(user, *args , **kwargs):
         if user.age >= 18:
-            print('El usuario ingresado es mayor de edad')
+            print('The logged in user is of legal age')
         else:
-            raise ValueError('El usuario es menor de edad')
-        func(user, *args)
+            raise ValueError('The logged in user is not of legal age')
+        func(user, *args, **kwargs)
     return wrapper
 
 
@@ -33,7 +33,7 @@ class User:
 
 @adult_check
 def  adult_check2(user):
-    print(f'La persona tiene {user.age} años.')
+    print(f'The person is {user.age} years old.')
 
 
 person=User('05/07/1999')

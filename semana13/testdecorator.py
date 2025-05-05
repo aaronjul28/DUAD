@@ -6,12 +6,12 @@ class User:
 
 
 def admin_only(func):
-    def wrapper(user, *args):
+    def wrapper(user, *args , **kwargs):
         if user.role != "Admin":
             raise ValueError(
                 "You are not allowed to run this function. You are not an admin"
             )
-        func(user, args)
+        func(user, args, kwargs)
 
     return wrapper
 
